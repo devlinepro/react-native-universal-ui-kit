@@ -18,7 +18,7 @@ const styles = StyleSheet.create<any>({
 	}),
 });
 
-export function Row({ children, space, style, _gap, _marginHorizontal }: RowProps) {
+const Row = function ({ children, space, style, _gap, _marginHorizontal }: RowProps) {
 	const columns: ReactElement[] = useMemo(
 		() => (isArray(children) ? (children as ReactElement[]) : [children as ReactElement]) || [],
 		[children]
@@ -54,7 +54,7 @@ export function Row({ children, space, style, _gap, _marginHorizontal }: RowProp
 			{columns.map((column, index) => (
 				<Fragment key={`grid-row-${index}`}>
 					{column.props.offset > 0 && <Column _empty _gap={_gap} width={column.props.offset} />}
-					{column.type["name"] === "Column" ? (
+					{column.type?.["componentName"] === "Column" ? (
 						cloneElement<any>(column as any, { _gap })
 					) : (
 						<Column _gap={_gap}>{column}</Column>
@@ -65,4 +65,8 @@ export function Row({ children, space, style, _gap, _marginHorizontal }: RowProp
 			{after > 0 && <Column _gap={_gap} _empty width={after} />}
 		</View>
 	);
-}
+};
+
+Row.componentName = "Row";
+
+export { Row };

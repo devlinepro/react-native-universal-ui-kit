@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import { StyleProp, StyleSheet, View, ViewStyle } from "react-native";
 import { theme } from "../../theme/theme";
+import { Row } from "./row";
 
 export interface ColumProps {
 	children?: ReactElement | ReactElement[];
@@ -29,10 +30,14 @@ const styles = StyleSheet.create<any>({
 	}),
 });
 
-export function Column({ children, width, fullHeight, centered, style, _empty, _gap }: ColumProps) {
+function Column({ children, width, fullHeight, centered, style, _empty, _gap }: ColumProps) {
 	return (
 		<View style={styles.container(width, centered)}>
 			<View style={styles.cell(_gap, _empty, fullHeight, style)}>{children}</View>
 		</View>
 	);
 }
+
+Column.componentName = "Column";
+
+export { Column };

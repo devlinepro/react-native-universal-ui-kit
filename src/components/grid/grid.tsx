@@ -23,7 +23,8 @@ const Grid: TGrid = ({ children, padding, margin, gap, style }) => {
 	const items: Row[] = isArray(children) ? children : [children];
 
 	items.forEach((item) => {
-		if (item?.type?.name !== "Row") {
+		console.log(item);
+		if (item.type?.['componentName'] !== "Row") {
 			throw new Error("Children should be of Grid.Row type");
 		}
 	});
