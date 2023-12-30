@@ -1,0 +1,56 @@
+export type ColorType =
+	| "text"
+	| "text.primary"
+	| "text.secondary"
+	| "text.tertiary"
+	| "text.quaternary"
+	| "primary"
+	| "primary.main"
+	| "primary.dark"
+	| "primary.light"
+	| "primary.contrastText"
+	| "secondary"
+	| "secondary.main"
+	| "secondary.dark"
+	| "secondary.light"
+	| "secondary.contrastText"
+	| "error"
+	| "error.main"
+	| "error.dark"
+	| "error.light"
+	| "error.contrastText"
+	| "background"
+	| "background.main"
+	| "background.dark"
+	| "background.light"
+	| "separator"
+	| "separator.main";
+
+export const colors: Record<ColorType, string> = {
+	text: "#000000",
+	"text.primary": "#000000",
+	"text.secondary": "#3C3C4399",
+	"text.tertiary": "#3C3C434D",
+	"text.quaternary": "#3C3C432E",
+	primary: "#3272a2",
+	"primary.main": "#3272a2",
+	"primary.dark": "#23647e",
+	"primary.light": "#519ebd",
+	"primary.contrastText": "#fff",
+	secondary: "#DF730F",
+	"secondary.main": "#DF730F",
+	"secondary.dark": "#DF730F",
+	"secondary.light": "#DF730F",
+	"secondary.contrastText": "#fff",
+	error: "#F25E5E",
+	"error.main": "#F25E5E",
+	"error.dark": "#F25E5E",
+	"error.light": "#F25E5E",
+	"error.contrastText": "#fff",
+	background: "#fff",
+	"background.main": "#fff",
+	"background.dark": "#cad5dd",
+	"background.light": "#e9edf1",
+	separator: "#00000026",
+	"separator.main": "00000026",
+};
