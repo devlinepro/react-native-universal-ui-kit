@@ -1,17 +1,19 @@
 import { StyleProp, View, ViewStyle } from "react-native";
 import { useMemo } from "react";
 import { getStylesFromProps } from "../../theme/helpers";
-import { ColorType } from "../../theme/tokens/colors";
+import {
+	ExactColorProps,
+	ExactSizeProps,
+	SpacingProps,
+	VisibilityProps,
+} from "../../theme/interfaces/common-props.interface";
 
-export function Stack({
-	children,
-	horizontal,
-	style,
-	...props
-}: {
+interface StackProps extends SpacingProps, VisibilityProps, ExactColorProps, ExactSizeProps {
 	horizontal?: boolean;
 	style?: StyleProp<ViewStyle>;
-}) {
+}
+
+export function Stack({ children, horizontal, style, ...props }: StackProps) {
 	const styles = useMemo(
 		() => ({
 			flexDirection: horizontal ? "row" : "column",

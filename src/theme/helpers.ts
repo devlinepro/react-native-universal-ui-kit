@@ -15,6 +15,8 @@ export function extractCommonProps<P1, P2>(
 		"medium",
 		"large",
 		"size",
+		"width",
+		"height",
 		"primary",
 		"secondary",
 		"tertiary",
@@ -135,6 +137,8 @@ export function getStylesFromProps(props: CommonProps<any>): StyleProp<any> {
 			display: props.hidden ? "none" : undefined,
 			color: theme.colors[props.color] || props.color,
 			backgroundColor: theme.colors[props.bg] || props.bg,
+			width: theme.sizes[props.width] || props.width,
+			height: theme.sizes[props.height] || props.height,
 		},
 		isUndefined
 	);

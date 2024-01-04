@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { theme, ThemeOverrides, ThemeProps } from "../theme";
+import { theme, ThemeOverrides } from "../theme";
 
 export function ThemeProvider({
 	children,

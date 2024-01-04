@@ -10,11 +10,19 @@ export interface SizeProps {
 	size?: SizeType | number;
 }
 
+export interface ExactSizeProps {
+	width?: SizeType | number;
+	height?: SizeType | number;
+}
+
 export interface ColorProps {
 	primary?: boolean;
 	secondary?: boolean;
 	tertiary?: boolean;
 	error?: boolean;
+}
+
+export interface ExactColorProps {
 	color?: ColorType | string;
 	bg?: ColorType | string;
 }
@@ -37,9 +45,18 @@ export interface SpacingProps {
 	pl?: SizeType | number;
 }
 
-export interface CommonProps<StyleType> extends SizeProps, ColorProps, SpacingProps {
+export interface VisibilityProps {
+	hidden?: boolean;
+}
+
+export interface CommonProps<StyleType>
+	extends SizeProps,
+		ExactSizeProps,
+		ColorProps,
+		ExactColorProps,
+		SpacingProps,
+		VisibilityProps {
 	children?: ReactElement | ReactElement[];
 	disabled?: boolean;
-	hidden?: boolean;
 	style?: StyleProp<StyleType> | undefined;
 }

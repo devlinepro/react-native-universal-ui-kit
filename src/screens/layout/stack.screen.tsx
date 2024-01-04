@@ -48,10 +48,6 @@ export function StackScreen() {
 					p="lg"
 					gap="lg"
 					my="sm"
-					style={{
-						width: 512,
-						height: 128,
-					}}
 				>
 					<Text color="primary.contrastText">Helper props</Text>
 					<Text color="primary.contrastText">p="lg"</Text>

@@ -23,4 +23,4 @@ plugins:
 
           {{> footer}}        
 
-  - - '@semantic-release/github'
+  - - '@semantic-release/npm'
