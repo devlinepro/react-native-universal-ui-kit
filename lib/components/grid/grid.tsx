@@ -7,7 +7,7 @@ import { SizeType } from "../../theme/tokens/sizes";
 import { theme } from "../../theme/theme";
 
 interface GridProps {
-	children: ReactElement | ReactElement[];
+	children: ReactElement | ReactElement[] | undefined | undefined[];
 	gap?: SizeType | number;
 	padding?: SizeType | number;
 	margin?: SizeType | number;
@@ -20,20 +20,19 @@ type TGrid = React.FunctionComponent<GridProps> & {
 };
 
 const Grid: TGrid = ({ children, padding, margin, gap, style }) => {
-	const items: Row[] = isArray(children) ? children : [children];
+	const items: Row[] = (isArray(children) ? children : [children]).filter(i => !!i);
 
 	items.forEach((item) => {
-		console.log(item);
-		if (item.type?.['componentName'] !== "Row") {
+		if (item?.type?.['componentName'] !== "Row") {
 			throw new Error("Children should be of Grid.Row type");
 		}
 	});
 
 	const styles = useMemo(
 		() => ({
-			gap: theme.spacing[gap] || Number(gap),
-			padding: theme.spacing[padding] || Number(padding),
-			margin: theme.spacing[margin] || Number(margin),
+			gap: theme.spacing[gap] || Number(gap) || 0,
+			padding: theme.spacing[padding] || Number(padding) || 0,
+			margin: theme.spacing[margin] || Number(margin) || 0,
 			...style,
 		}),
 		[gap, padding, margin, style]
@@ -45,7 +44,7 @@ const Grid: TGrid = ({ children, padding, margin, gap, style }) => {
 				cloneElement<Row>(item as any, {
 					key: `grid-row-${index}`,
 					_gap: gap,
-					_marginHorizontal: -(gap / 2),
+					_marginHorizontal: gap ? -(gap / 2) : undefined,
 				})
 			)}
 		</View>

@@ -1,5 +1,5 @@
 import { isNumber, isUndefined, omit, omitBy, pick } from "lodash";
-import { ColorProps, CommonProps, SizeProps } from "./interfaces/common-props.interface";
+import { CommonProps } from "./interfaces/common-props.interface";
 import { theme } from "./theme";
 import { StyleProp } from "react-native";
 
@@ -41,6 +41,8 @@ export function extractCommonProps<P1, P2>(
 		"pr",
 		"pb",
 		"pl",
+		"bw",
+		"br",
 		"style",
 		...include,
 	];
@@ -139,6 +141,9 @@ export function getStylesFromProps(props: CommonProps<any>): StyleProp<any> {
 			backgroundColor: theme.colors[props.bg] || props.bg,
 			width: theme.sizes[props.width] || props.width,
 			height: theme.sizes[props.height] || props.height,
+			borderWidth: props.bw,
+			borderRadius: props.br,
+			borderColor: theme.colors[props.bc] || props.bc,
 		},
 		isUndefined
 	);

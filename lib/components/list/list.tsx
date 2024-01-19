@@ -7,10 +7,10 @@ const styles = StyleSheet.create<any>({
 	}),
 });
 
-const List = function({ children, style }) {
+const List = function ({ children, style }) {
 	return <View style={styles.container(style)}>{children}</View>;
-}
+};
 
 List.Item = ListItem;
 
-export {List}
+export { List };

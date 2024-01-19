@@ -24,7 +24,7 @@ const styles = StyleSheet.create<any>({
 		};
 	},
 	cell: (_gap, _empty, fullHeight, style) => ({
-		marginHorizontal: _gap / 2,
+		marginHorizontal: _gap ? _gap / 2 : 0,
 		height: fullHeight ? "100%" : undefined,
 		...style,
 	}),

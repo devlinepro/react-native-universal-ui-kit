@@ -1,9 +1,10 @@
-import { theme } from "./theme/theme";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Grid } from "./components/grid/grid";
-import { ScrollView } from "./components/scroll-view/scroll-view";
-import { List } from "./components/list/list";
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { theme } from "../lib";
+import { Grid } from "../lib";
+import { ScrollView } from "../lib";
+import { List } from "../lib";
+import { Text } from "../lib";
+import { useNavigation } from "@react-navigation/native";
 import { OverviewScreen } from "./screens/getting-started/overview.screen";
 import { UsageScreen } from "./screens/getting-started/usage.screen";
 import { SafeAreaView, StyleSheet, View } from "react-native";
@@ -20,6 +21,7 @@ import { SwitchScreen } from "./screens/components/switch.screen";
 import { TouchableScreen } from "./screens/interactions/touchable.screen";
 import { ScrollViewScreen } from "./screens/layout/scroll-view.screen";
 import { useEffect, useRef } from "react";
+import { SurfaceScreen } from "./screens/layout/surface.screen";
 
 const Nav = createNativeStackNavigator();
 const styles = StyleSheet.create({
@@ -28,13 +30,14 @@ const styles = StyleSheet.create({
 		backgroundColor: theme.colors["background.light"],
 	},
 	grid: {
+		flex: 1,
 		backgroundColor: theme.colors.background,
 		maxWidth: 1280,
 		width: "100%",
 		marginHorizontal: "auto",
 	},
 	sidebar: {
-		height: "100vh" as any,
+		flex: 1,
 		borderRightWidth: 1,
 		borderRightColor: theme.colors.separator,
 	},
@@ -43,7 +46,7 @@ const styles = StyleSheet.create({
 		gap: theme.spacing.md,
 	},
 	content: {
-		height: "100vh" as any,
+		flex: 1,
 	},
 });
 const screenOptions = {
@@ -64,7 +67,7 @@ export function Navigation({ routeName }) {
 	return (
 		<SafeAreaView style={styles.safeArea}>
 			<Grid style={styles.grid}>
-				<Grid.Row>
+				<Grid.Row style={{flex: 1}}>
 					<Grid.Column width={300} fullHeight style={styles.sidebar}>
 						<ScrollView>
 							<View style={styles.nav}>
@@ -86,7 +89,9 @@ export function Navigation({ routeName }) {
 									<List.Item selected={routeName === "StackScreen"} onPress={() => navigate("StackScreen")}>
 										Stack
 									</List.Item>
-									<List.Item disabled>Surface</List.Item>
+									<List.Item selected={routeName === "SurfaceScreen"} onPress={() => navigate("SurfaceScreen")}>
+										Surface
+									</List.Item>
 									<List.Item selected={routeName === "TextScreen"} onPress={() => navigate("TextScreen")}>
 										Text
 									</List.Item>
@@ -157,23 +162,24 @@ export function Navigation({ routeName }) {
 					</Grid.Column>
 					<Grid.Column style={styles.content}>
 						<ScrollView ref={scrollViewRef}>
-							<View style={{flex: 1}}>
-							<Nav.Navigator screenOptions={screenOptions}>
-								<Nav.Screen name="OverviewScreen" component={OverviewScreen} />
-								<Nav.Screen name="UsageScreen" component={UsageScreen} />
-								<Nav.Screen name="GridScreen" component={GridScreen} />
-								<Nav.Screen name="StackScreen" component={StackScreen} />
-								<Nav.Screen name="TextScreen" component={TextScreen} />
-								<Nav.Screen name="ButtonScreen" component={ButtonScreen} />
-								<Nav.Screen name="ListScreen" component={ListScreen} />
-								<Nav.Screen name="AvatarScreen" component={AvatarScreen} />
-								<Nav.Screen name="BadgeScreen" component={BadgeScreen} />
-								<Nav.Screen name="DividerScreen" component={DividerScreen} />
-								<Nav.Screen name="IconScreen" component={IconScreen} />
-								<Nav.Screen name="SwitchScreen" component={SwitchScreen} />
-								<Nav.Screen name="TouchableScreen" component={TouchableScreen} />
-								<Nav.Screen name="ScrollViewScreen" component={ScrollViewScreen} />
-							</Nav.Navigator>
+							<View style={{ flex: 1 }}>
+								<Nav.Navigator screenOptions={screenOptions}>
+									<Nav.Screen name="OverviewScreen" component={OverviewScreen} />
+									<Nav.Screen name="UsageScreen" component={UsageScreen} />
+									<Nav.Screen name="GridScreen" component={GridScreen} />
+									<Nav.Screen name="StackScreen" component={StackScreen} />
+									<Nav.Screen name="SurfaceScreen" component={SurfaceScreen} />
+									<Nav.Screen name="TextScreen" component={TextScreen} />
+									<Nav.Screen name="ButtonScreen" component={ButtonScreen} />
+									<Nav.Screen name="ListScreen" component={ListScreen} />
+									<Nav.Screen name="AvatarScreen" component={AvatarScreen} />
+									<Nav.Screen name="BadgeScreen" component={BadgeScreen} />
+									<Nav.Screen name="DividerScreen" component={DividerScreen} />
+									<Nav.Screen name="IconScreen" component={IconScreen} />
+									<Nav.Screen name="SwitchScreen" component={SwitchScreen} />
+									<Nav.Screen name="TouchableScreen" component={TouchableScreen} />
+									<Nav.Screen name="ScrollViewScreen" component={ScrollViewScreen} />
+								</Nav.Navigator>
 							</View>
 						</ScrollView>
 					</Grid.Column>

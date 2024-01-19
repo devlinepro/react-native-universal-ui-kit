@@ -33,9 +33,9 @@ export interface SpacingProps {
 	mx?: SizeType | number;
 	my?: SizeType | number;
 	mt?: SizeType | number;
-	mr?: SizeType | number;
+	mr?: SizeType | number | "auto";
 	mb?: SizeType | number;
-	ml?: SizeType | number;
+	ml?: SizeType | number | "auto";
 	p?: SizeType | number;
 	px?: SizeType | number;
 	py?: SizeType | number;
@@ -45,9 +45,17 @@ export interface SpacingProps {
 	pl?: SizeType | number;
 }
 
+export interface BorderProps {
+	bw?: number;
+	br?: number;
+	bc?: ColorType | string;
+}
+
 export interface VisibilityProps {
 	hidden?: boolean;
 }
+
+type Children = ReactElement | undefined | false;
 
 export interface CommonProps<StyleType>
 	extends SizeProps,
@@ -55,8 +63,9 @@ export interface CommonProps<StyleType>
 		ColorProps,
 		ExactColorProps,
 		SpacingProps,
-		VisibilityProps {
-	children?: ReactElement | ReactElement[];
+		VisibilityProps,
+		BorderProps {
+	children?: Children | Children[];
 	disabled?: boolean;
 	style?: StyleProp<StyleType> | undefined;
 }

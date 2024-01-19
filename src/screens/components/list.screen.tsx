@@ -1,9 +1,9 @@
-import { Text } from "../../components/typography/text";
-import { Stack } from "../../components/stack/stack";
-import { Divider } from "../../components/divider/divider";
-import { Grid } from "../../components/grid/grid";
-import { List } from "../../components/list/list";
-import { ListItem } from "../../components/list/list-item";
+import { Text } from "../../../lib";
+import { Stack } from "../../../lib";
+import { Divider } from "../../../lib";
+import { Grid } from "../../../lib";
+import { List } from "../../../lib";
+import { ListItem } from "../../../lib";
 
 export function ListScreen() {
 	return (

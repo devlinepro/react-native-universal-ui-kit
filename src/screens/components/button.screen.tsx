@@ -1,9 +1,9 @@
-import { Text } from "../../components/typography/text";
-import { Stack } from "../../components/stack/stack";
-import { Divider } from "../../components/divider/divider";
-import { theme } from "../../theme/theme";
 import { View } from "react-native";
-import { Button } from "../../components/button/button";
+import { Text } from "../../../lib";
+import { Stack } from "../../../lib";
+import { Divider } from "../../../lib";
+import { theme } from "../../../lib";
+import { Button } from "../../../lib";
 
 export function ButtonScreen() {
 	return (

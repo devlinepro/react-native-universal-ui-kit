@@ -2,10 +2,10 @@ import { Text } from "../../../lib";
 import { Stack } from "../../../lib";
 import { Divider } from "../../../lib";
 
-export function StackScreen() {
+export function SurfaceScreen() {
 	return (
 		<Stack p="lg">
-			<Text variant="h1">Stack</Text>
+			<Text variant="h1">Surface</Text>
 			<Divider />
 			<Text mt="md">Just a View with helper props.</Text>
 			<Text mt="md">To Do: write detailed documentation</Text>
@@ -48,12 +48,18 @@ export function StackScreen() {
 					p="lg"
 					gap="lg"
 					my="sm"
+					bw={3}
+					br={8}
+					bc={"red"}
 				>
 					<Text color="primary.contrastText">Helper props</Text>
 					<Text color="primary.contrastText">p="lg"</Text>
 					<Text color="primary.contrastText">gap="lg"</Text>
 					<Text color="primary.contrastText">my="sm"</Text>
 					<Text color="primary.contrastText">bg="primary"</Text>
+					<Text color="primary.contrastText">bw="3"</Text>
+					<Text color="primary.contrastText">br="3"</Text>
+					<Text color="primary.contrastText">bc="red"</Text>
 				</Stack>
 			</Stack>
 		</Stack>

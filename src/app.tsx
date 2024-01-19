@@ -2,9 +2,9 @@ import "@expo/metro-runtime";
 import registerRootComponent from "expo/build/launch/registerRootComponent";
 import { createNavigationContainerRef, NavigationContainer } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { ThemeProvider } from "./theme/providers/theme-provider";
 import { Navigation } from "./navigation";
 import { useState } from "react";
+import { ThemeProvider } from "../lib";
 
 const navigationRef = createNavigationContainerRef();
 

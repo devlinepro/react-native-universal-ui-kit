@@ -1,9 +1,9 @@
-import { Text } from "../../components/typography/text";
-import { Divider } from "../../components/divider/divider";
-import { StyleSheet, View } from "react-native";
-import { Grid } from "../../components/grid/grid";
-import { theme } from "../../theme/theme";
-import { Stack } from "../../components/stack/stack";
+import { StyleSheet } from "react-native";
+import { Text } from "../../../lib";
+import { Divider } from "../../../lib";
+import { Grid } from "../../../lib";
+import { theme } from "../../../lib";
+import { Stack } from "../../../lib";
 
 const styles = StyleSheet.create({
 	column: {
@@ -14,8 +14,6 @@ const styles = StyleSheet.create({
 });
 
 export function GridScreen() {
-
-
 	return (
 		<Stack p="lg">
 			<Text variant="h1">Grid</Text>

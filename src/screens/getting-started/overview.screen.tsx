@@ -1,8 +1,9 @@
-import { Text } from "../../components/typography/text";
-import { Stack } from "../../components/stack/stack";
-import { Divider } from "../../components/divider/divider";
-import { List } from "../../components/list/list";
+import { Text } from "../../../lib";
+import { Stack } from "../../../lib";
+import { Divider } from "../../../lib";
+import { List } from "../../../lib";
 import { useNavigation } from "@react-navigation/native";
+import { SurfaceScreen } from "../layout/surface.screen";
 
 export function OverviewScreen() {
 	const { navigate } = useNavigation<any>();
@@ -38,6 +39,7 @@ export function OverviewScreen() {
 			<List>
 				<List.Item onPress={() => navigate("GridScreen")}>Grid</List.Item>
 				<List.Item onPress={() => navigate("StackScreen")}>Stack</List.Item>
+				<List.Item onPress={() => navigate("SurfaceScreen")}>Surface</List.Item>
 				<List.Item onPress={() => navigate("TextScreen")}>Text</List.Item>
 				<List.Item onPress={() => navigate("ScrollViewScreen")}>ScrollView</List.Item>
 			</List>

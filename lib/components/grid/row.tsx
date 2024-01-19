@@ -13,7 +13,7 @@ export interface RowProps {
 const styles = StyleSheet.create<any>({
 	container: (_marginHorizontal, style) => ({
 		flexDirection: "row",
-		marginHorizontal: _marginHorizontal,
+		marginHorizontal: _marginHorizontal || undefined,
 		...style,
 	}),
 });

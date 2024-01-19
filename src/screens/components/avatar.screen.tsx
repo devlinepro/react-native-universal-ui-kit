@@ -1,6 +1,6 @@
-import { Text } from "../../components/typography/text";
-import { Stack } from "../../components/stack/stack";
-import { Divider } from "../../components/divider/divider";
+import { Text } from "../../../lib";
+import { Stack } from "../../../lib";
+import { Divider } from "../../../lib";
 
 export function AvatarScreen() {
 	return (

@@ -1,16 +1,10 @@
-import { StyleProp, View, ViewStyle } from "react-native";
+import { View, ViewStyle } from "react-native";
 import { useMemo } from "react";
 import { getStylesFromProps } from "../../theme/helpers";
-import {
-	ExactColorProps,
-	ExactSizeProps,
-	SpacingProps,
-	VisibilityProps,
-} from "../../theme/interfaces/common-props.interface";
+import { CommonProps, SizeProps } from "../../theme/interfaces/common-props.interface";
 
-interface StackProps extends SpacingProps, VisibilityProps, ExactColorProps, ExactSizeProps {
+interface StackProps extends Omit<CommonProps<ViewStyle>, SizeProps> {
 	horizontal?: boolean;
-	style?: StyleProp<ViewStyle>;
 }
 
 export function Stack({ children, horizontal, style, ...props }: StackProps) {

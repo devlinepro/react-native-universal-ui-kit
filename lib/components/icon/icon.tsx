@@ -1,6 +1,6 @@
 import ExpoIcon from "@expo/vector-icons/MaterialCommunityIcons";
 import { CommonProps } from "../../theme/interfaces/common-props.interface";
-import { TextStyle, ViewProps, ViewStyle } from "react-native";
+import { TextStyle, ViewProps } from "react-native";
 import { IconProps } from "@expo/vector-icons/build/createIconSet";
 import { extractCommonProps } from "../../theme/helpers";
 
