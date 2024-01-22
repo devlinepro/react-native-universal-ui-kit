@@ -48,8 +48,12 @@ export function Avatar({ src, name, icon, ...props }: AvatarProps) {
 	return (
 		<View style={styles.container(props)}>
 			{src && <Image source={isString(src) ? { uri: src } : src} style={styles.image} />}
-			{name && <Text color={_textColor} style={styles.text(props)}>{name?.[0] || ""}</Text>}
-			{icon && <Icon name={icon} size={styles.text(props).fontSize} color={_textColor} />}
+			{!src && name && (
+				<Text color={_textColor} style={styles.text(props)}>
+					{name?.[0] || ""}
+				</Text>
+			)}
+			{!src && !name && icon && <Icon name={icon} size={styles.text(props).fontSize} color={_textColor} />}
 			{!src && !name && !icon && <Icon name={"account"} size={styles.text(props).fontSize} color={_textColor} />}
 		</View>
 	);

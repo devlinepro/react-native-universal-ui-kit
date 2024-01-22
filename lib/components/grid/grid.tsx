@@ -1,13 +1,14 @@
-import React, { cloneElement, ReactElement, useMemo } from "react";
+import React, { cloneElement, useMemo } from "react";
 import { StyleProp, View, ViewStyle } from "react-native";
 import { isArray } from "lodash";
 import { Column, ColumProps } from "./column";
 import { Row, RowProps } from "./row";
 import { SizeType } from "../../theme/tokens/sizes";
 import { theme } from "../../theme/theme";
+import { ChildrenProp } from "../../theme/interfaces/common-props.interface";
 
 interface GridProps {
-	children: ReactElement | ReactElement[] | undefined | undefined[];
+	children: ChildrenProp;
 	gap?: SizeType | number;
 	padding?: SizeType | number;
 	margin?: SizeType | number;

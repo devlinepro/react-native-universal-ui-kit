@@ -3,9 +3,10 @@ import { StyleProp, StyleSheet, View, ViewStyle } from "react-native";
 import { isArray, sum } from "lodash";
 import { Column } from "./column";
 import { theme } from "../../theme/theme";
+import { ChildrenProp } from "../../theme/interfaces/common-props.interface";
 
 export interface RowProps {
-	children?: ReactElement | ReactElement[];
+	children?: ChildrenProp;
 	space?: "between" | "around";
 	style?: StyleProp<ViewStyle>;
 }

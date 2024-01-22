@@ -56,6 +56,7 @@ export interface VisibilityProps {
 }
 
 type Children = ReactElement | undefined | false;
+export type ChildrenProp = Children | Children[];
 
 export interface CommonProps<StyleType>
 	extends SizeProps,
@@ -65,7 +66,7 @@ export interface CommonProps<StyleType>
 		SpacingProps,
 		VisibilityProps,
 		BorderProps {
-	children?: Children | Children[];
+	children?: ChildrenProp;
 	disabled?: boolean;
 	style?: StyleProp<StyleType> | undefined;
 }
