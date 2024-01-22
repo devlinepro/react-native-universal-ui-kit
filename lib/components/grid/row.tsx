@@ -21,7 +21,7 @@ const styles = StyleSheet.create<any>({
 
 const Row = function ({ children, space, style, _gap, _marginHorizontal }: RowProps) {
 	const columns: ReactElement[] = useMemo(
-		() => (isArray(children) ? (children as ReactElement[]) : [children as ReactElement]) || [],
+		() => ((isArray(children) ? (children as ReactElement[]) : [children as ReactElement]) || []).filter((i) => !!i),
 		[children]
 	);
 
