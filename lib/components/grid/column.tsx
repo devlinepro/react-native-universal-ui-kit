@@ -1,10 +1,10 @@
 import { ReactElement } from "react";
 import { StyleProp, StyleSheet, View, ViewStyle } from "react-native";
 import { theme } from "../../theme/theme";
-import { Row } from "./row";
+import { ChildrenProp } from "../../theme/interfaces/common-props.interface";
 
 export interface ColumProps {
-	children?: ReactElement | ReactElement[];
+	children?: ChildrenProp;
 	width?: number;
 	offset?: number;
 	fullHeight?: boolean;
