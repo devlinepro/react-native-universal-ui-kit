@@ -1,5 +1,4 @@
-import { StyleSheet, View, ViewStyle } from "react-native";
-import { Image } from "expo-image";
+import { Image, StyleSheet, View, ViewStyle } from "react-native";
 import { isString } from "lodash";
 import { Text } from "../typography/text";
 import { CommonProps } from "../../theme/interfaces/common-props.interface";
